@@ -1,16 +1,16 @@
 import React from 'react'
 import '../../App.css'
-import Add from '../../image/add-category.svg'
+import Add from '../../image/edit.svg'
 import {Link } from "react-router-dom";
 const index = () => {
     
   return (
     <>
-         <div class="mx-5  ">       
+         <div class="mx-5 ">       
 <div class="row mt-5 shadow " >
     <div class="col-xl-6 col-md-6 col-sm-12 ">
         <form class=" py-5 px-3">
-            <h4 class="mb-3">Add Category</h4>
+            <h4 class="mb-3">Edit Category</h4>
             <label for="exampleInputEmail1" class="form-label">Select Bazar</label>
             <select class="form-select" aria-label="Default select example">
                     <option selected>Select Bazar</option>
@@ -22,7 +22,7 @@ const index = () => {
             <label for="formFile" class="form-label">Upload Image</label>
             <input class="form-control" type="file" id="formFile"/>
             </div>
-        <div class='row mt-2'>
+            <div class='row mt-2'>
         <div class="col-md-4">
                     <label for="inputState" class="form-label">Choose Category</label>
                     <select id="inputState" class="form-select">
@@ -73,7 +73,7 @@ const index = () => {
         </div>
         <div class="mt-3">
 
-            <button type="submit" class="btn btn-success rounded-pill px-4">Add Category</button>
+            <button type="submit" class="btn btn-success rounded-pill px-4">Update Category</button>
         </div>
     </form>
 </div>

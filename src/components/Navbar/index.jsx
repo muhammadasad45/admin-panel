@@ -42,7 +42,8 @@ const index = () => {
           </Link>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><Link class="dropdown-item" to="/AddCategories">Add Category</Link></li>
-            <li><Link class="dropdown-item" to="/RemoveCategories">Remove post</Link></li>
+            <li><Link class="dropdown-item" to="/editCategories">Edit Category</Link></li>
+            <li><Link class="dropdown-item" to="/RemoveCategories">View Category</Link></li>
           </ul>
         </li>
         

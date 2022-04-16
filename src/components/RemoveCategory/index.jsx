@@ -1,5 +1,6 @@
 import React from 'react'
-
+import fruite from '../../image/fruite.webp'
+import {Link } from "react-router-dom";
 const index = () => {
   return (
     <>
@@ -16,29 +17,32 @@ const index = () => {
           <table class="rounded-3 table table-responsive" id="remove">
             <thead>
               <tr>
-                <th scope="col">Email</th>
+                <th scope="col">Image</th>
+                <th scope="col">Bazar name</th>
                 <th scope="col">Category Name</th>
                 <th scope="col">Sub Category Name</th>
                 <th scope="col">Variety </th>
-                <th scope="col">Permission</th>
+                <th scope="col">Action</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>hassan12@gmail.com</td>
+                <td> <img style={{width: "2rem"}} src={fruite} alt="not" /> </td>
+                <td>agri bazar</td>
                 <td>Fruite</td>
                 <td>Mango</td>
                 <td>Lungra</td>
-                <td class="d-flex ">
-                    <button class="m-0 px-3 btn btn-sm btn-success rounded-pill">
-                        Remove
-                    </button>
-                    <button class="ms-3 px-4 m-0 px-3 btn btn-sm btn-success rounded-pill">
-                      Add
+                <td class="">
+           
+                       <Link class="m-0 px-3 btn btn-sm btn-success rounded-pill text-decoration-none text-white" to="/editCategories" >
+                       Edit
+                       </Link>  
+               
+                    <button class="ms-3 px-4 m-0 px-3 btn btn-sm  rounded-pill" style={{color:"white", backgroundColor: "#e00909"}}>
+                      Delete
                   </button>
                 </td>
               </tr>
-           
               
             </tbody>
           </table>
