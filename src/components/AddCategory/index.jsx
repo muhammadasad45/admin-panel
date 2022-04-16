@@ -6,6 +6,7 @@ const index = () => {
     
   return (
     <>
+{/* Add Category */}
          <div class="mx-5  ">       
 <div class="row mt-5 shadow " >
     <div class="col-xl-6 col-md-6 col-sm-12 ">
