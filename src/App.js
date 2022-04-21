@@ -8,11 +8,10 @@ import Main from './pages/Main'
 import Post from './pages/Posts'
 import ManagePost from './pages/ManagePost'
 import Approves from './pages/Approves'
-import Unapprove from './pages/Unappprove'
 import Userlist from './pages/UserList'
 import Addcategories from './pages/AddCategories'
 import EditCategory from './pages/EditCategory'
-import RemoveCategories from './pages/RemoveCategories'
+import ViewCategories from './pages/ViewCategories'
 import Complain from './pages/complain'
 import ResolveComplain from './pages/Resolve'
 import PendingComplain from './pages/Pending'
@@ -27,11 +26,10 @@ function App() {
       <Route path="/ManagePost" element={<ManagePost />} />
       <Route path="/Post" element={<Post />} />
       <Route path="/Approves" element={<Approves />} />
-      <Route path="/Unapprove" element={<Unapprove />} />
       <Route path="/Userlist" element={<Userlist />} />
       <Route path="/AddCategories" element={<Addcategories />} />
       <Route path="/editCategories" element={<EditCategory />} />
-      <Route path="/RemoveCategories" element={<RemoveCategories />} />
+      <Route path="/ViewCategories" element={<ViewCategories />} />
       <Route path="/Complain" element={<Complain />} />
       <Route path="/ResolveComplain" element={<ResolveComplain />} />
       <Route path="/PendingComplain" element={<PendingComplain />} />

@@ -108,7 +108,7 @@ const index = () => {
               </div>
               </div>
           <div class="d-grid mx-auto text-center">
-                <Link to="/Unapprove" class="btn btn-success text-center">Unaprove</Link>
+                <Link to="/viewCategories" class="btn btn-success text-center">View Category</Link>
               </div>
             
             </div>
