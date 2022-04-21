@@ -1,5 +1,5 @@
 import React from 'react'
-
+import fruite from '../../image/fruite.webp'
 const index = () => {
   return (
     <>
@@ -15,10 +15,10 @@ const index = () => {
           <table className="rounded-3 table table-responsive" id="post">
             <thead>
               <tr>
-                <th scope="col">Email</th>
-                <th scope="col">Post Title</th>
-                <th scope="col">Price/unit</th>
-                <th scope="col">Availbe Quantity</th>
+             <th scope="col">Image</th>
+                <th scope="col">Category</th>
+                <th scope="col">Sub-Category</th>
+                <th scope="col">Variety</th>
                 <th scope="col">Location</th>
                 <th scope="col">Contact no</th>
                 <th scope="col">Approval</th>
@@ -26,15 +26,15 @@ const index = () => {
             </thead>
             <tbody>
               <tr>
-                <td>hassan12@gmail.com</td>
-                <td>Fruite</td>
-                <td>50</td>
-                <td>50kg</td>
+                <td><img style={{width: "2rem"}} src={fruite} alt="not" /></td>
+                <td>Fruits</td>
+                <td>Mango</td>
+                <td>Chaunsa</td>
                 <td>islamabad</td>
                 <td>0300-1234567</td>
                 <td className="d-flex ">
                   <button className="m-0 px-3 btn btn-sm btn-success rounded-pill">
-                    Approve
+                    Unapprove
                   </button>
               </td>
               </tr>

@@ -30,9 +30,8 @@ const index = () => {
             Manage Post
           </Link>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><Link class="dropdown-item" to="/Post">Post</Link></li>
-            <li><Link class="dropdown-item" to="/Approves">Approve Post</Link></li>
-            <li><Link class="dropdown-item" to="/Unapprove">Unapprove Post</Link></li>
+            <li><Link class="dropdown-item" to="/Post">Post Requests</Link></li>
+            <li><Link class="dropdown-item" to="/Approves">Approved Post</Link></li>
           </ul>
         </li>
         

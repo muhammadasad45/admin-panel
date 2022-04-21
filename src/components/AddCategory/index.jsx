@@ -13,7 +13,7 @@ const index = () => {
         <form class=" py-5 px-3">
             <h4 class="mb-3">Add Category</h4>
             <label for="exampleInputEmail1" class="form-label">Select Bazar</label>
-            <select class="form-select" aria-label="Default select example">
+            <select class="form-select" aria-label="Default select exampnle">
                     <option selected>Select Bazar</option>
                     <option value="1">Agri bazar</option>
                     <option value="2">Machinery</option>
