@@ -1,6 +1,7 @@
 import React from 'react'
 
-const index = () => {
+const index = ({complaints , ResolveComplaint}) => {
+  console.log(complaints)
   return (
     <>
           <div class="mx-5  ">
@@ -17,7 +18,6 @@ const index = () => {
               <tr>
                 <th scope="col">Email</th>
                 <th scope="col">Fullname</th>
-                <th scope="col">User type</th>
                 <th scope="col">Location</th>
                 <th scope="col">Contact no</th>
                 <th scope="col">Description</th>
@@ -25,24 +25,19 @@ const index = () => {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>hassan12@gmail.com</td>
-                <td>Ali Hassan</td>
-                <td>Seller</td>
-                <td>Gujrat</td>
-                <td>0300-5482456</td>
-                <td>Plsease approve my category</td>
-                <td class="d-flex ">
-                    <button class="m-0 px-3 btn btn-sm btn-success rounded-pill">
-                        <img class="mb-1 me-1" style={{width: "1rem"}} alt="not found"  src="https://img.icons8.com/ios-filled/50/fa314a/delete-sign--v1.png"/>Pending
-                    </button>
-                    <button class="m-0 px-3 ms-3 btn btn-sm btn-success rounded-pill">
-                       Resolve
-                       <img class="mb-1 ms-2" style={{width: "1rem"}}  alt="not found" src="https://img.icons8.com/ios-filled/50/26e07f/checkmark--v1.png"/> 
-                    </button>
-                </td>
-              </tr>
-           
+              {complaints.complaints.map(complaint => (
+                <tr>
+                  <td>{complaint.user.email}</td>
+                  <td>{complaint.user.name}</td>
+                  <td>{complaint.user.location}</td>
+                  <td>{complaint.user.mobilephone}</td>
+                  <td>{complaint.description}</td>
+                  <td>
+                    {complaint.status === "pending" ? <button class="btn btn-success" onClick={ResolveComplaint(complaint._id)} type="submit">Resolve</button> :<button class="btn btn-success" disabled type="submit">Resolved</button> }
+                  </td>
+                </tr>
+              ))}
+
               
             </tbody>
           </table>

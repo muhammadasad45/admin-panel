@@ -6,7 +6,7 @@ import {Link } from "react-router-dom";
 import approve from '../../image/approve.svg'
 import unapprove from '../../image/pending_approval.svg'
 import suggestion from '../../image/suggestion.svg'
-const index = () => {
+const index = ({userCount , compCount , pendingCom}) => {
   return (
     <>
         {/* Results  */}
@@ -17,7 +17,7 @@ const index = () => {
                         <h4 class='text-white' >User</h4>
                         <img  alt="not found" style={{width: "2rem" ,height: "2rem"}} src="https://img.icons8.com/material-sharp/24/ffffff/user.png"/>
                     </div>
-                    <p class="text-white fs-5 ms-1">500</p>
+                    <p class="text-white fs-5 ms-1">{userCount}</p>
                 </div>
             </div>
             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
@@ -26,7 +26,7 @@ const index = () => {
                         <h4 class='text-white' >Complains</h4>
                         <img alt="not found" style={{width: "2rem" ,height: "2rem"}} src="https://img.icons8.com/material/24/ffffff/complaint.png"/>
                     </div>
-                    <p class="text-white fs-5 ms-1">52K</p>
+                    <p class="text-white fs-5 ms-1">{compCount}</p>
                 </div>
             </div>
             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
@@ -44,7 +44,7 @@ const index = () => {
                         <h4 class='text-white' >Pending complain</h4>
                         <img alt="not found" style={{width: "2rem" ,height: "2rem"}} src="https://img.icons8.com/material/24/ffffff/product--v1.png"/>
                     </div>
-                    <p class="text-white fs-5 ms-1">52K</p>
+                    <p class="text-white fs-5 ms-1">{pendingCom}</p>
                 </div>
             </div>    
         </div> 

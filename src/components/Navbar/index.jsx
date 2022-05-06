@@ -3,7 +3,7 @@ import '../../App.css';
 import logo from '../../image/logo3.png'
 import {Link } from "react-router-dom";
 
-const index = () => {
+const index = ({handleLogout}) => {
   return (
     <>
     <div class="container-fluid-fluid" >
@@ -63,7 +63,7 @@ const index = () => {
         </li>
       </ul>
       <form class="d-flex">
-        <Link to="/" class="p-1 btn btn-success" type="submit"><img alt="not found" src="https://img.icons8.com/ios-glyphs/30/ffffff/exit.png"/></Link>
+        <button onClick={handleLogout} class="p-1 btn btn-success" type="submit"><img alt="not found" src="https://img.icons8.com/ios-glyphs/30/ffffff/exit.png"/></button>
       </form>
     </div>
   </div>
