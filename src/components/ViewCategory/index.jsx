@@ -1,7 +1,8 @@
 import React from 'react'
 import fruite from '../../image/fruite.webp'
 import {Link } from "react-router-dom";
-const index = () => {
+import { api } from '../../constants/apiUrl';
+const index = ({Categories}) => {
   return (
     <>
            <div class="mx-5  ">
@@ -21,28 +22,24 @@ const index = () => {
                 <th scope="col">Bazar name</th>
                 <th scope="col">Category Name</th>
                 <th scope="col">Sub Category Name</th>
-                <th scope="col">Variety </th>
                 <th scope="col">Action</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td> <img style={{width: "2rem"}} src={fruite} alt="not" /> </td>
-                <td>agri bazar</td>
-                <td>Fruite</td>
-                <td>Mango</td>
-                <td>Lungra</td>
-                <td class="">
-           
-                       <Link class="m-0 px-3 btn btn-sm btn-success rounded-pill text-decoration-none text-white" to="/editCategories" >
-                       Edit
-                       </Link>  
-               
-                    <button class="ms-3 px-4 m-0 px-3 btn btn-sm  rounded-pill" style={{color:"white", backgroundColor: "#e00909"}}>
-                      Delete
-                  </button>
-                </td>
-              </tr>
+              {Categories.categories.map((category,index)=>{
+                return(
+                  <tr>
+                    <td><img src={api+category.image} style={{height:'2rem'}} alt=""/></td>
+                    <td>{category.bazar}</td>
+                    <td>{category.name}</td>
+                    <td>{category.subCategory}</td>
+                    <td>
+                      <Link to={`/editCategory/${category.id}`} class="btn btn-success">Edit</Link>
+                      <Link to={`/deleteCategory/${category.id}`} class="btn btn-danger">Delete</Link>
+                    </td>
+                  </tr>
+                )
+              })}
               
             </tbody>
           </table>

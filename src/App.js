@@ -21,6 +21,7 @@ import Loginn from './pages/Login'
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { getUsers } from './actions/user';
+import AddCategory from './pages/AddCategories';
 function App() {
 
   let history = useNavigate()
@@ -44,7 +45,7 @@ function App() {
       <Route path="/Post" element={<Post />} />
       <Route path="/Approves" element={<Approves />} />
       <Route path="/Userlist" element={<Userlist />} />
-      <Route path="/AddCategories" element={<Addcategories />} />
+      <Route path="/AddCategories" element={<AddCategory />} />
       <Route path="/editCategories" element={<EditCategory />} />
       <Route path="/ViewCategories" element={<ViewCategories />} />
       <Route path="/Complain" element={<Complaints />} />

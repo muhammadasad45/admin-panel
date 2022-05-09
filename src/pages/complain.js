@@ -13,6 +13,7 @@ const Complaints = () => {
     dispatch(getComplaints())
  }
 
+ const [Changed, setChanged] = useState(false)
  let getC = async()=>{
   await getComplaintss()
 }
@@ -22,12 +23,18 @@ const Complaints = () => {
   },[complaints])
 
   let ResolveComplaint = (id) => {
-  
+    setChanged(true)
     dispatch(ResolveComplain(id))
   }
+
+  useEffect(() => {
+  
+    setChanged(false)
+    getC()
+  }, [Changed])
   
   const [Complaints, setComplaints] = useState(complaints)
-
+  console.log(Complaints)
   return (
     <>
         <Navbar/>

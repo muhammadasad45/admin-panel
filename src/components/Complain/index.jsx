@@ -33,7 +33,7 @@ const index = ({complaints , ResolveComplaint}) => {
                   <td>{complaint.user.mobilephone}</td>
                   <td>{complaint.description}</td>
                   <td>
-                    {complaint.status === "pending" ? <button class="btn btn-success" onClick={ResolveComplaint(complaint._id)} type="submit">Resolve</button> :<button class="btn btn-success" disabled type="submit">Resolved</button> }
+                    {complaint.status === "pending" ? <button class="btn btn-success" onClick={()=>ResolveComplaint(complaint._id)} type="submit">Resolve</button> :<button class="btn btn-success" disabled type="submit">Resolved</button> }
                   </td>
                 </tr>
               ))}
