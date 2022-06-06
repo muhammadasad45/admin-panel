@@ -1,6 +1,8 @@
 import React from 'react'
 import fruite from '../../image/fruite.webp'
-const index = () => {
+import { api } from '../../constants/apiUrl'
+const index = ({post ,ApprovePost}) => {
+  console.log(post)
   return (
     <>
            <div class="mx-5  ">
@@ -22,26 +24,27 @@ const index = () => {
                 <th scope="col">Variety</th>
                 <th scope="col">Location</th>
                 <th scope="col">Contact no</th>
+                <th scope='col'>Quantity</th>
+                <th scope='col'>Price</th>
                 <th scope="col">Approval</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-              <td><img style={{width: "2rem"}} src={fruite} alt="not" /></td>
-                <td>Fruits</td>
-                <td>Mango</td>
-                <td>Chaunsa</td>
-                <td>islamabad</td>
-                <td>0300-1234567</td>
-                <td class="d-flex ">
-                  <button class="m-0 px-3 btn btn-sm btn-success rounded-pill">
-                    Unapprove
-                  </button>
-                  <button class="m-0 px-3 ms-3 btn btn-sm btn-success rounded-pill">
-                    Approve
-                  </button>
-              </td>
-              </tr>
+             {post.map(post => (
+               <tr>
+                 <td><img  style={{height:"3rem" , width:"3rem"}} src={api+post.Category.image } alt="fruite" class="img-fluid"/></td>
+                  <td>{post.Category.name}</td>
+                  <td>{post.Category.subCategory}</td>
+                  <td>{post.Product}</td>
+                  <td>{post.addedBy.location}</td>
+                  <td>{post.addedBy.mobilephone}</td>
+                  <td>{post.Quantity} KG</td>
+                  <td>{post.price}</td>
+                  <td> 
+                    <button onClick={()=>ApprovePost(post._id)} class="btn btn-primary" disabled={post.isApproved}> {post.isApproved?"Approved":"Approve"} </button>
+                    </td>
+                </tr>
+              ))}
            
               
             </tbody>

@@ -2,7 +2,7 @@ import React from 'react'
 import fruite from '../../image/fruite.webp'
 import {Link } from "react-router-dom";
 import { api } from '../../constants/apiUrl';
-const index = ({Categories}) => {
+const index = ({Categories , deletecategory}) => {
   return (
     <>
            <div class="mx-5  ">
@@ -34,8 +34,8 @@ const index = ({Categories}) => {
                     <td>{category.name}</td>
                     <td>{category.subCategory}</td>
                     <td>
-                      <Link to={`/editCategory/${category.id}`} class="btn btn-success">Edit</Link>
-                      <Link to={`/deleteCategory/${category.id}`} class="btn btn-danger">Delete</Link>
+                      <Link to={`editCategories/${category._id}`} class="btn btn-success">Edit</Link>
+                      <button onClick={()=>deletecategory(category._id)} class="btn btn-danger">Delete</button>
                     </td>
                   </tr>
                 )

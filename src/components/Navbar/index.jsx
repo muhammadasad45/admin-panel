@@ -41,7 +41,6 @@ const index = ({handleLogout}) => {
           </Link>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><Link class="dropdown-item" to="/AddCategories">Add Category</Link></li>
-            <li><Link class="dropdown-item" to="/editCategories">Edit Category</Link></li>
             <li><Link class="dropdown-item" to="/viewCategories">View Category</Link></li>
           </ul>
         </li>
@@ -53,7 +52,7 @@ const index = ({handleLogout}) => {
           <ul class="dropdown-menu rounded-3" aria-labelledby="navbarDropdown">
             <li><Link class="dropdown-item" to="/Complain">Complain</Link></li>
             <li><Link class="dropdown-item" to="/ResolveComplain">Resolve Complain</Link></li>
-            <li><Link class="dropdown-item" to="/PendingComplain">Pending Complain</Link></li>
+           
           </ul>
         </li>
         <li class="nav-item">
@@ -63,7 +62,7 @@ const index = ({handleLogout}) => {
         </li>
       </ul>
       <form class="d-flex">
-        <button onClick={handleLogout} class="p-1 btn btn-success" type="submit"><img alt="not found" src="https://img.icons8.com/ios-glyphs/30/ffffff/exit.png"/></button>
+        <button onClick={()=>handleLogout()} class="p-1 btn btn-success" type="submit"><img alt="not found" src="https://img.icons8.com/ios-glyphs/30/ffffff/exit.png"/></button>
       </form>
     </div>
   </div>

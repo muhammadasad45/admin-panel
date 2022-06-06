@@ -34,6 +34,7 @@ function App() {
   
 
 
+ 
 
 
   return (
@@ -46,7 +47,7 @@ function App() {
       <Route path="/Approves" element={<Approves />} />
       <Route path="/Userlist" element={<Userlist />} />
       <Route path="/AddCategories" element={<AddCategory />} />
-      <Route path="/editCategories" element={<EditCategory />} />
+      <Route exact path="/viewCategories/editCategories/:id" element={<EditCategory  />} />
       <Route path="/ViewCategories" element={<ViewCategories />} />
       <Route path="/Complain" element={<Complaints />} />
       <Route path="/ResolveComplain" element={<ResolveComplain />} />

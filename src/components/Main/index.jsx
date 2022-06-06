@@ -6,7 +6,7 @@ import {Link } from "react-router-dom";
 import approve from '../../image/approve.svg'
 import unapprove from '../../image/pending_approval.svg'
 import suggestion from '../../image/suggestion.svg'
-const index = ({userCount , compCount , pendingCom}) => {
+const index = ({userCount ,postCount, compCount , pendingCom}) => {
   return (
     <>
         {/* Results  */}
@@ -35,7 +35,7 @@ const index = ({userCount , compCount , pendingCom}) => {
                         <h4 class='text-white' >Post</h4>
                         <img alt="not found" style={{width: "2rem" ,height: "2rem"}} src="https://img.icons8.com/material/24/ffffff/mailbox-opened-flag-down--v1.png"/>
                     </div>
-                    <p class="text-white fs-5 ms-1">52K</p>
+                    <p class="text-white fs-5 ms-1">{postCount}</p>
                 </div>
             </div>
             <div class="col-xl-3  col-lg-3 col-md-6 col-sm-12">

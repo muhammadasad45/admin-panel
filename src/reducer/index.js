@@ -6,4 +6,5 @@ import userReducer from "./user"
 import complaintsReducer from "./Complaints"
 import SuggestionsReducer from "./Suggestion"
 import CategoryReducer from "./Category"
-export const reducers = combineReducers({authData:auth ,users:userReducer , complaints:complaintsReducer , suggestions:SuggestionsReducer , categories:CategoryReducer});
+import PostReducer from "./Posts"
+export const reducers = combineReducers({authData:auth ,users:userReducer , complaints:complaintsReducer , suggestions:SuggestionsReducer , categories:CategoryReducer , posts:PostReducer});

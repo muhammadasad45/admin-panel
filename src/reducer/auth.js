@@ -8,7 +8,6 @@ const authReducer = (state = { authData: JSON.parse(localStorage.getItem('profil
       return { ...state, authData: action.data, loading: false, errors: null };
     case actionType.LOG_OUT:
       localStorage.clear();
-
       return { ...state, authData: null, loading: false, errors: null };
     default:
       return state;

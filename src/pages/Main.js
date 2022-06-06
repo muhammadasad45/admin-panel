@@ -22,13 +22,15 @@ const Main = () => {
   }
   let users = useSelector(state => state.users)
   let complaints = useSelector(state => state.complaints)
+  const posts = useSelector(state => state.posts)
   const [Users, setUsers] = useState(users)
   const [Complaints, setComplaints] = useState(complaints)
-
+  const [Posts, setPosts] = useState(posts)
 
   useEffect(() => {
     getData()
     getC()
+    getAllPosts()
     setUsers(users)
     setComplaints(complaints)
   },[users , complaints])
@@ -44,6 +46,13 @@ const Main = () => {
  const getData = async () => {
      await getUser();
  }
+ const getPosts = async () => {
+   dispatch(getAllPosts())
+}
+
+const getAllPosts = async () => {
+  await getPosts()
+}
 
 
 // Count No of Complaints Which are not resolved 
@@ -58,7 +67,7 @@ Complaints.complaints.map(complaint => {
   return (
       <>
     <Navbar handleLogout={handleLogout}/>
-    <MainSection userCount = {Users.users.length} compCount={Complaints.complaints.length} pendingCom = {count}/>
+    <MainSection userCount = {Users.users.length} postCount={Posts.posts.length} compCount={Complaints.complaints.length} pendingCom = {count}/>
       </>
   )
 }

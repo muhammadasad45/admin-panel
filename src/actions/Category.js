@@ -56,7 +56,7 @@ export const deleteCategory = (id) => async (dispatch) => {
         const { data } = await axios(
             {
                 method: 'delete',
-                url: api + 'categories/delete' + id,
+                url: api + 'categories/delete/' + id,
                 headers: {
                     'Authorization': token
                 }
@@ -65,6 +65,29 @@ export const deleteCategory = (id) => async (dispatch) => {
         if (data.success == true) {
             dispatch(getAllCategories());
         }
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+
+export const getCategoryById = (id) => async (dispatch) => {
+    try {
+        let token = 'Bearer ' + JSON.parse(localStorage.getItem('profile')).token;
+
+        const { data } = await axios(
+            {
+                method: 'get',
+                url: api + 'category/' + id,
+                headers: {
+                    'Authorization': token
+                }
+            }
+        )
+       if(data.success==true){
+           console.log(1 ,data)
+        dispatch({ type: GET_POST_BY_ID, data: data.posts });
+       }
     } catch (error) {
         console.log(error);
     }

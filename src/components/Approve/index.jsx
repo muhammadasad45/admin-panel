@@ -1,6 +1,8 @@
 import React from 'react'
+import { api } from '../../constants/apiUrl'
 import fruite from '../../image/fruite.webp'
-const index = () => {
+const index = ({post}) => {
+ let p= post.posts.filter(post => post.isApproved === true)
   return (
     <>
           <div className="mx-5  ">   
@@ -12,32 +14,36 @@ const index = () => {
           </form>
 
 
-          <table className="rounded-3 table table-responsive" id="post">
+          <table class="rounded-3 table table-responsive" id="post">
             <thead>
               <tr>
-             <th scope="col">Image</th>
+              <th scope="col">Image</th>
                 <th scope="col">Category</th>
                 <th scope="col">Sub-Category</th>
                 <th scope="col">Variety</th>
                 <th scope="col">Location</th>
                 <th scope="col">Contact no</th>
+                <th scope='col'>Quantity</th>
+                <th scope='col'>Price</th>
                 <th scope="col">Approval</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td><img style={{width: "2rem"}} src={fruite} alt="not" /></td>
-                <td>Fruits</td>
-                <td>Mango</td>
-                <td>Chaunsa</td>
-                <td>islamabad</td>
-                <td>0300-1234567</td>
-                <td className="d-flex ">
-                  <button className="m-0 px-3 btn btn-sm btn-success rounded-pill">
-                    Unapprove
-                  </button>
-              </td>
-              </tr>
+             {p.map(post => (
+               <tr>
+                 <td><img  style={{height:"3rem" , width:"3rem"}} src={api+post.Category.image } alt="fruite" class="img-fluid"/></td>
+                  <td>{post.Category.name}</td>
+                  <td>{post.Category.subCategory}</td>
+                  <td>{post.Product}</td>
+                  <td>{post.addedBy.location}</td>
+                  <td>{post.addedBy.mobilephone}</td>
+                  <td>{post.Quantity} KG</td>
+                  <td>{post.price}</td>
+                  <td> 
+                    <button class="btn btn-primary" disabled={post.isApproved}> Approve </button>
+                    </td>
+                </tr>
+              ))}
            
               
             </tbody>
