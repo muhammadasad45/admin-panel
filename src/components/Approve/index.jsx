@@ -1,15 +1,15 @@
 import React from 'react'
 import { api } from '../../constants/apiUrl'
 import fruite from '../../image/fruite.webp'
-const index = ({post}) => {
+const index = ({post , filterPosts}) => {
  let p= post.posts.filter(post => post.isApproved === true)
+ console.log(post)
   return (
     <>
           <div className="mx-5  ">   
         <form className="d-grid gap-2 offset-md-8 col-xl-4 my-3">
             <div className="d-flex">
-                <input className="border border-none form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                <button className="btn btn-success" type="submit">Search</button>
+               
             </div>
           </form>
 
