@@ -10,6 +10,7 @@ export const GET_ALL_CATEGORIES = 'GET_ALL_CATEGORIES'
 export const GET_ALL_POSTS = 'GET_ALL_POSTS'
 export const GET_POSTS_BY_USER = 'GET_POSTS_BY_USER'
 export const GET_POST_BY_ID = 'GET_POST_BY_ID'
+export const GET_CATEGORY_BY_ID = 'GET_CATEGORY_BY_ID'
 
 
 

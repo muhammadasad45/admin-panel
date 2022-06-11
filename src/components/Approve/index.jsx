@@ -40,7 +40,7 @@ const index = ({post}) => {
                   <td>{post.Quantity} KG</td>
                   <td>{post.price}</td>
                   <td> 
-                    <button class="btn btn-primary" disabled={post.isApproved}> Approve </button>
+                    <button class="btn btn-primary" disabled={post.isApproved}> Approved </button>
                     </td>
                 </tr>
               ))}

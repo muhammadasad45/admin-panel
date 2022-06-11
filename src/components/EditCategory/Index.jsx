@@ -2,7 +2,8 @@ import React from 'react'
 import '../../App.css'
 import Add from '../../image/edit.svg'
 import {Link } from "react-router-dom";
-const index = () => {
+const index = ({Category}) => {
+    console.log(Category)
     
   return (
     <>

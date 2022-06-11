@@ -6,6 +6,7 @@ import { signout } from '../actions/auth'
 import { useDispatch, useSelector } from 'react-redux'
 import { getUsers } from '../actions/user'
 import { getComplaints } from '../actions/complaints'
+import {getAllPosts} from "../actions/post"
 const Main = () => {
   let dispatch = useDispatch()
   let history = useNavigate()
@@ -30,7 +31,7 @@ const Main = () => {
   useEffect(() => {
     getData()
     getC()
-    getAllPosts()
+    getAll()
     setUsers(users)
     setComplaints(complaints)
   },[users , complaints])
@@ -47,10 +48,10 @@ const Main = () => {
      await getUser();
  }
  const getPosts = async () => {
-   dispatch(getAllPosts())
+  await dispatch(getAllPosts())
 }
 
-const getAllPosts = async () => {
+const getAll = async () => {
   await getPosts()
 }
 

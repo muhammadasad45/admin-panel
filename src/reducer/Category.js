@@ -12,6 +12,7 @@ import axios from 'axios';
                 ...state,
                 categories: action.payload
             }
+
         default:
             return state;
     }

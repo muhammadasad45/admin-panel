@@ -34,7 +34,6 @@ const index = ({Categories , deletecategory}) => {
                     <td>{category.name}</td>
                     <td>{category.subCategory}</td>
                     <td>
-                      <Link to={`editCategories/${category._id}`} class="btn btn-success">Edit</Link>
                       <button onClick={()=>deletecategory(category._id)} class="btn btn-danger">Delete</button>
                     </td>
                   </tr>

@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { api } from '../constants/apiUrl';
-import {GET_ALL_CATEGORIES} from '../constants/actionType'
+import {GET_ALL_CATEGORIES ,GET_CATEGORY_BY_ID} from '../constants/actionType'
 
 // Category Action
 export const getAllCategories =()=> async(dispatch) => {
@@ -38,7 +38,7 @@ export const addCategory = (formData , history) => async (dispatch) => {
                 }
             }
         )
-        console.log(data);
+        
         if (data.success == true) {
             dispatch(getAllCategories());
             history("/ViewCategories")
@@ -70,25 +70,3 @@ export const deleteCategory = (id) => async (dispatch) => {
     }
 }
 
-
-export const getCategoryById = (id) => async (dispatch) => {
-    try {
-        let token = 'Bearer ' + JSON.parse(localStorage.getItem('profile')).token;
-
-        const { data } = await axios(
-            {
-                method: 'get',
-                url: api + 'category/' + id,
-                headers: {
-                    'Authorization': token
-                }
-            }
-        )
-       if(data.success==true){
-           console.log(1 ,data)
-        dispatch({ type: GET_POST_BY_ID, data: data.posts });
-       }
-    } catch (error) {
-        console.log(error);
-    }
-}

@@ -3,6 +3,7 @@ import fruite from '../../image/fruite.webp'
 import { api } from '../../constants/apiUrl'
 const index = ({post ,ApprovePost}) => {
   console.log(post)
+  post = post.filter(post => post.isApproved === false)
   return (
     <>
            <div class="mx-5  ">
@@ -41,7 +42,8 @@ const index = ({post ,ApprovePost}) => {
                   <td>{post.Quantity} KG</td>
                   <td>{post.price}</td>
                   <td> 
-                    <button onClick={()=>ApprovePost(post._id)} class="btn btn-primary" disabled={post.isApproved}> {post.isApproved?"Approved":"Approve"} </button>
+                  <button onClick={()=>ApprovePost(post._id)} class="btn btn-primary" > Approve </button>
+                    <button onClick={()=>ApprovePost(post._id)} class="btn btn-danger" > Reject </button>
                     </td>
                 </tr>
               ))}

@@ -20,7 +20,7 @@ export const getComplaints = () => async (dispatch) => {
             }
             )
         if(data.success==true){
-            console.log(data)
+           
             dispatch({ type: GET_COMPLAINTS,payload: data.complaints });
         }
 

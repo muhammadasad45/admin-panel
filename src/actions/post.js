@@ -18,7 +18,7 @@ export const getAllPosts = () => async (dispatch) => {
             }
         )
        if(data.success==true){
-           console.log(1 ,data)
+        
         dispatch({ type: GET_ALL_POSTS, data: data.posts });
        }
     } catch (error) {
@@ -40,7 +40,7 @@ export const approvePost = (id) => async (dispatch) => {
             }
         )
        if(data.success==true){
-           console.log(1 ,data)
+      
         dispatch({ type: GET_ALL_POSTS, data: data.posts });
        }
     } catch (error) {
