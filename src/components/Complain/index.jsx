@@ -6,12 +6,7 @@ const index = ({complaints , ResolveComplaint}) => {
     <>
           <div class="mx-5  ">
         
-        <form class="d-grid gap-2 offset-md-8 col-xl-4 my-3">
-            <div class="d-flex">
-                <input class="border border-none form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                <button class="btn btn-success" type="submit">Search</button>
-            </div>
-          </form>
+       
        
         <table class="rounded-3 table table-responsive" id="complain">
             <thead>
