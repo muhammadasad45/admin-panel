@@ -6,6 +6,7 @@ import { getAllPosts } from '../actions/post';
 const Approves = () => {
   const posts = useSelector(state => state.posts)
   const [Posts, setPosts] = useState(posts.posts)
+  const [Loading, setLoading] = useState(true)
   const dispatch = useDispatch();
   const getPosts = async () => {
     await dispatch(getAllPosts())
@@ -16,8 +17,12 @@ const Approves = () => {
   }
   useEffect(() => {
     getData()
-    setPosts(posts)
+   setLoading(false)
   }, [])
+
+  useEffect(() => {
+    setPosts(posts.posts)
+  }, [Loading])
   return (
     <>
          <Navbar/>

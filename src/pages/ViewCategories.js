@@ -7,8 +7,7 @@ import Viewcategories from '../components/ViewCategory'
 const ViewCategories = () => {
 const categories = useSelector(state => state.categories)
 const [Categories, setCategories] = useState(categories)
-const [changes, setchanges] = useState(false)
-
+const [Loading, setLoading] = useState(true)
  const dispatch = useDispatch();
 const getCategoriees = async() => { 
     await dispatch(getAllCategories())
@@ -25,15 +24,14 @@ const deletecategory = (id)=>{
 
 
 
-useEffect(() => {
-  getAllCategoriees()
-  setchanges(true)
+useEffect(async() => {
+ await getAllCategoriees()
+ setLoading(false)
  
-},[changes])
+  },[])
 useEffect(() => {
   setCategories(categories)
-  setchanges(false)
-}, [changes])
+  }, [Loading])
 
   return (
     <>

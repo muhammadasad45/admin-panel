@@ -28,7 +28,7 @@ const index = ({Categories , deletecategory}) => {
               {Categories.categories.map((category,index)=>{
                 return(
                   <tr>
-                    <td><img src={api+category.image} style={{height:'2rem'}} alt=""/></td>
+                    <td><img src={api+'uploads/'+category.image} style={{height:'2rem'}} alt=""/></td>
                     <td>{category.bazar}</td>
                     <td>{category.name}</td>
                     <td>{category.subCategory}</td>

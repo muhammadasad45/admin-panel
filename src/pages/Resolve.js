@@ -10,16 +10,21 @@ const Resolve = () => {
   const getComplaintss = async()=>{
     dispatch(getComplaints())
  }
-
+const [Loading, setLoading] = useState(true)
  let getC = async()=>{
   await getComplaintss()
 }
   useEffect(() => {
     getC()
-    setComplaints(complaints)
-  },[complaints])
+    setLoading(false)
+    
+  },[])
 
- 
+ useEffect(() => {
+   
+    setComplaints(complaints)
+    
+ }, [Loading])
   const [Complaints, setComplaints] = useState(complaints)
   console.log(Complaints)
 

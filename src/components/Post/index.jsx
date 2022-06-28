@@ -8,14 +8,10 @@ const index = ({post ,ApprovePost}) => {
     <>
            <div class="mx-5  ">
         
-        <form class="d-grid gap-2 offset-md-8 col-xl-4 my-3">
-            <div class="d-flex">
-                
-            </div>
-          </form>
+        
 
 
-          <table class="rounded-3 table table-responsive" id="post">
+          <table class="rounded-3 table table-responsive mt-10" id="post">
             <thead>
               <tr>
               <th scope="col">Image</th>
@@ -32,7 +28,7 @@ const index = ({post ,ApprovePost}) => {
             <tbody>
              {post.map(post => (
                <tr>
-                 <td><img  style={{height:"3rem" , width:"3rem"}} src={api+post.Category.image } alt="fruite" class="img-fluid"/></td>
+                 <td><img  style={{height:"3rem" , width:"3rem"}} src={api+'uploads/'+post.Category.image } alt="fruite" class="img-fluid"/></td>
                   <td>{post.Category.name}</td>
                   <td>{post.Category.subCategory}</td>
                   <td>{post.Product}</td>

@@ -7,6 +7,7 @@ import { approvePost, getAllPosts } from '../actions/post';
 const Posts = () => {
   const posts = useSelector(state => state.posts)
   const [Posts, setPosts] = useState(posts.posts)
+  const [Loading, setLoading] = useState(true)
   const dispatch = useDispatch();
   const getPosts = async () => {
      dispatch(getAllPosts())
@@ -23,8 +24,13 @@ const Posts = () => {
 
   useEffect(async() => {
     await getData()
-    setPosts(posts.posts)
+    setLoading(false)
+    
   }, [])
+  useEffect(() => {
+    
+    setPosts(posts.posts)
+  }, [Loading])
 
 
   return (

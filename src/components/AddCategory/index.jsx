@@ -29,11 +29,7 @@ const index = ({handleName ,handleSubmit, handleSubCategory, handleImage , handl
                     <label for="inputCity" class="form-label">Enter Category Name</label>
                     <input type="text" onChange={(e)=>handleName(e)} class="form-control" id="inputCity"/>
                 </div>
-                <div class="col-md-2">
-                <div class='pt-4 mt-2'>
-                    <Link to="" class="btn btn-success">+</Link>
-                </div>
-                </div>
+               
                
         </div>
 
@@ -43,11 +39,7 @@ const index = ({handleName ,handleSubmit, handleSubCategory, handleImage , handl
                         <label for="exampleInputPassword1" class="form-label">Enter Sub Category Name</label>
                     <input type="text" onChange={(e)=>handleSubCategory(e)} class="form-control" id="inputCity"/>
                 </div>
-                <div class="col-md-2">
-                <div class='pt-4 mt-2'>
-                    <Link to="" class="btn btn-success">+</Link>
-                </div>
-                </div>
+                
               
         </div>
         <div class="mt-3">

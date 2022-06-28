@@ -6,16 +6,21 @@ import { getAllSuggestions } from '../actions/Suggestion'
 const Suggestions = () => {
 
   let dispatch = useDispatch()
+  const [Loading, setLoading] = useState(true)
   let suggestions = useSelector(state => state.suggestions)
   const getSuggestion = async()=>{
     dispatch(getAllSuggestions())
   }
 
   
+  useEffect(async() => {
+   await getSuggestion()
+    setLoading(false)
+  },[])
   useEffect(() => {
-    getSuggestion()
     setSuggestions(suggestions)
-  },[suggestions])
+  }, [Loading])
+
   const [Suggestions, setSuggestions] = useState(suggestions)
 
 

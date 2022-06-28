@@ -12,6 +12,8 @@ const UserList = () => {
     navigate('/')
   }
 
+  const [Loading, setLoading] = useState(true)
+
 
   
   const [Changed, setChanged] = useState(false)
@@ -28,22 +30,16 @@ const UserList = () => {
  const getData = async () => {
      await getUser();
  }
-useEffect(() => {
-  getData();
-}, [])
+
 
 let users = useSelector(state => state.users)
-console.log(users)
-
 const [Users, setUsers] = useState(users)
 const [FilteredUser, setFilteredUser] = useState(Users.users)
 const [search, setSearch] = useState('')
 
   useEffect(() => {
-  
-    setChanged(false)
     getData()
-  }, [Changed])
+  }, [Loading , Changed])
 
 useEffect(() => {
   setFilteredUser(users.users)

@@ -7,11 +7,7 @@ const index = ({post , filterPosts}) => {
   return (
     <>
           <div className="mx-5  ">   
-        <form className="d-grid gap-2 offset-md-8 col-xl-4 my-3">
-            <div className="d-flex">
-               
-            </div>
-          </form>
+       
 
 
           <table class="rounded-3 table table-responsive" id="post">
@@ -31,7 +27,7 @@ const index = ({post , filterPosts}) => {
             <tbody>
              {p.map(post => (
                <tr>
-                 <td><img  style={{height:"3rem" , width:"3rem"}} src={api+post.Category.image } alt="fruite" class="img-fluid"/></td>
+                 <td><img  style={{height:"3rem" , width:"3rem"}} src={api+'uploads/'+post.Category.image } alt="fruite" class="img-fluid"/></td>
                   <td>{post.Category.name}</td>
                   <td>{post.Category.subCategory}</td>
                   <td>{post.Product}</td>

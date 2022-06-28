@@ -6,9 +6,9 @@ import Complain from '../components/Complain';
 import Navbar from '../components/Navbar';
 
 const Complaints = () => {
-
+const [Loading, setLoading] = useState(true)
   let dispatch = useDispatch()
-  let complaints = useSelector(state => state.complaints)
+ 
   const getComplaintss = async()=>{
     dispatch(getComplaints())
  }
@@ -17,24 +17,25 @@ const Complaints = () => {
  let getC = async()=>{
   await getComplaintss()
 }
-  useEffect(() => {
-    getC()
-    setComplaints(complaints)
-  },[complaints])
-
-  let ResolveComplaint = (id) => {
-    setChanged(true)
-    dispatch(ResolveComplain(id))
+let complaints = useSelector(state => state.complaints)
+const [Complaints, setComplaints] = useState(complaints)
+let ResolveComplaint = (id) => {
+  
+ dispatch(ResolveComplain(id))
+  setChanged(true)
+  setChanged(false)
+}
+  useEffect(async() => {
+    
+    await getC()
+    setLoading(false)
+  },[Changed])
+useEffect(() => {
+  if(Loading === false || Changed === true){
+  setComplaints(complaints)
   }
-
-  useEffect(() => {
+}, [Loading , Changed])
   
-    setChanged(false)
-    getC()
-  }, [Changed])
-  
-  const [Complaints, setComplaints] = useState(complaints)
-  console.log(Complaints)
   return (
     <>
         <Navbar/>

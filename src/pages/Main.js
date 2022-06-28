@@ -27,14 +27,22 @@ const Main = () => {
   const [Users, setUsers] = useState(users)
   const [Complaints, setComplaints] = useState(complaints)
   const [Posts, setPosts] = useState(posts)
+  const [Loading, setLoading] = useState(true)
+
+  useEffect(async () => {
+    
+    await getData()
+    await getC()
+    await getAll()
+    setLoading(false)
+  },[])
 
   useEffect(() => {
-    getData()
-    getC()
-    getAll()
     setUsers(users)
     setComplaints(complaints)
-  },[users , complaints])
+    setPosts(posts)
+    
+  }, [Loading])
   const getUser = async () => {
     dispatch(getUsers())
  }

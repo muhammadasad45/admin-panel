@@ -30,7 +30,7 @@ export const getComplaints = () => async (dispatch) => {
 }
 
 
-export const ResolveComplain = async(id) => {
+export const ResolveComplain =(id)=> async(dispatch) => {
     try {
         if(localStorage.getItem('profile')){
             //  var token=`Bearer ${JSON.parse(localStorage.getItem('profile')).token}`
